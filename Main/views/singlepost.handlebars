@@ -1,0 +1,32 @@
+<div class="post-wrapper box ">
+        <div class="date-wrapper">{{post.date_created}}</div>
+        <div class="title-wrapper">{{post.title}}</div>
+        <div class="content-wrapper">{{post.content}}</div>
+        <div class="user-wrapper"><strong>{{post.user.username}}</strong></div>
+       
+    </div>
+{{#if loggedIn}}
+<form class="comment-form" action="/api/comments" method="post">
+  <div>
+    <textarea class="ml-5" name="content"></textarea>
+    <input type="hidden" name="post_id" value="{{post.id}}" />
+  </div>
+
+  <div>
+    <button class="button is-warning ml-5 mb-5" type="submit">add comment</button>
+  </div>
+  
+</form>
+{{/if}}
+
+<div class="box has-background-info-dark has-text-white is-size-5">Review Comments
+{{#each post.comments as |comment|}}
+
+<div class="box">{{comment.content}}</div>
+
+{{/each}}
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

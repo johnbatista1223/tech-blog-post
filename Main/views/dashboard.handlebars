@@ -1,0 +1,29 @@
+<div class="mb-5 pt-3">
+        <a href="/dashboard/create/"><button id="create-post" class="button is-dark is-pulled-right">create post</button></a>
+        
+        <h2 class="title pb-4"><strong>Dashboard:Posts</strong></h2><hr>
+
+            </div>
+{{#if posts.length}}
+
+
+   {{#each posts as |post|}}
+
+    <div class="post-wrapper box $box-color ">
+        <div class="date-wrapper">{{post.date_created}}</div>
+        <div class="title-wrapper">{{post.title}}</div>
+        <div class="content-wrapper">{{post.content}}</div>
+        <div class="user-wrapper">{{post.user.username}}</div>
+    </div>
+     <a href="/post/edit/{{post.id}}"><button class="button mb-5 ml-5 is-dark">edit post</button></a>
+    
+{{/each}}
+        
+           
+        
+  
+
+{{else}}
+<h6 class="pb-4 has-text-centered is-italic">you do not currently have any posts</h6>
+
+{{/if}}

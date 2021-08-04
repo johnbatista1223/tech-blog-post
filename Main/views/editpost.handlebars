@@ -1,0 +1,17 @@
+<section>
+    <a href="/dashboard" class="is-pulled-right">  back to dashboard</a>
+  <h2 class="title">create new blog post</h2><hr>
+
+  <form class="new-post-form" action="/api/posts/update" method="post">
+    <div>
+      <label for="post-title">title:</label>
+      <input class="input" type="text" id="post-title" name="title" placeholder="insert blog title here" value="{{title}}" />
+    </div>
+    <div>
+      <label for="post-content">content:</label>
+      <input class="textarea is-large" id="post-content" name="content" placeholder="insert blog content here" value="{{content}}" />
+    </div>
+    <input type="hidden" value="{{id}}" name="post_id" />
+    <button type="submit" class="button is-dark is-pulled-right">Update post</button>
+  </form>
+</section>

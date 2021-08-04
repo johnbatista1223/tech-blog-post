@@ -1,0 +1,12 @@
+{{#each posts as |post|}}
+
+
+    <div class="post-wrapper box has-background-grey-lighter ">
+        <div class="date-wrapper has-text-centered">{{post.date_created}}</div>
+        <div class="title-wrapper has-text-centered is-uppercase is-size-4 has-text-link">{{post.title}}</div>
+        <div class="content-wrapper has-text-centered">{{post.content}}</div>
+        <div class="user-wrapper has-text-black px-3 py-3 has-text-weight-bold is-primary is-size-4 has-text-centered">{{post.user.username}}</div>
+        <a href="/post/{{post.id}}" class="mb-5 ml-5 is-warning has-text-danger has-text-centered">View Post</a>
+    </div>
+    
+{{/each}}
